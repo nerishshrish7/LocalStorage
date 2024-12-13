@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="handleSubmit()">
+        <input type="text" id="getText">
+        <button type="submit">Submit</button>
+
+        <div id="display"></div>
+    </form>
+</body>
+<script>
+
+    const display = localStorage.getItem("data");
+    document.getElementById("display").innerHTML=display;
+    const handleSubmit =()=>{
+        const text = document.getElementById("getText").value;
+        if(text){
+            localStorage.setItem("data",text);
+        }
+        else{
+            alert("Please input text")
+        }
+    }
+
+</script>
+</html>
